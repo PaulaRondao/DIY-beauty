@@ -16,6 +16,8 @@ code {
 
 h1 {
   font-size: 2em;
+  color: #32251b;
+  margin: 0
 }
 
 h2 {
@@ -28,6 +30,5 @@ p {
 }
 
 li {
-  /* list-style-type: none; */
   line-height: 1.4em;
 }

@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import './RecipeCard.sass';
 import { } from '../../assets/kasia-serbin.jpg';
+import { RecipeContext } from '../../App';
 
 function RecipeCard(props) {
 
     function click(e) {
         e.preventDefault();
         console.log(props.name)
-    }
+    };
+
+    const recipes = useContext(RecipeContext);
 
     return (
         <div className="RecipeCard">
