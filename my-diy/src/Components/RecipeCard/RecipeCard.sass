@@ -1,0 +1,33 @@
+.RecipeCard 
+    height: 22em
+    width: 15em
+    border: 1px solid #ecebea
+    border-radius: 8px
+    background-color: white
+    padding: 10px
+    display: flex
+    flex-direction: column
+    align-items: center
+    transition: all 0.4s ease-in-out 0s
+    margin: 0.5em
+
+    .imgCard
+        width: 15em
+        height: 9em
+        border-radius: 8px
+
+    .ingredientList
+        display: flex
+        align-items: flex-start
+        flex-direction: column
+    
+    .separator
+        height: 0.1em
+        width: 12em
+        background-color: grey
+        margin-bottom: 1px
+
+.RecipeCard:hover 
+    box-shadow: 10px 5px 10px black
+    opacity: 0.7
+    transform: translate(0, -0.2em)
