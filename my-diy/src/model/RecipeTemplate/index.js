@@ -1,4 +1,4 @@
-export class Recipe {
+export class RecipeTemplate {
     constructor(name, image, ingredients) {
         this.name = name;
         this.image = image;

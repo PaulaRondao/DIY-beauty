@@ -1,32 +1,29 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { } from '../../assets/kasia-serbin.jpg';
+import './RecipeForm.sass';
+import TextField from '@mui/material/TextField';
+// import { recipeList } from "../../model/RecipeList";
 
+export default function RecipeForm(props) {
 
-export default function MediaCard(props) {
+    function close() {
+        console.log("Fermer")
+    }
+
     return (
-        <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-                sx={{ height: 140 }}
-                image={props.image}
-            />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    Lizard
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small">Annuler</Button>
-                <Button size="small">Valider</Button>
-            </CardActions>
-        </Card>
+        <>
+            <div className="RecipeForm">
+                <h1>{props.name}</h1>
+                <img src={props.image} alt="" className="imgCard" />
+                <div className="ingredientList">
+                    {props.ingredients.map((ingredient) => { return (<TextField id={ingredient} label="Outlined" variant="outlined" value={ingredient} />); })}
+                </div>
+                {/* <TextField id="standard-basic" label="Standard" variant="standard" /> */}
+                <div className='sectionButton'>
+                    <button className='buttonCancel' onClick={close}>Annuler</button>
+                    <button className='buttonValidate'>Valider</button>
+                </div>
+            </div>
+        </>
     );
 }

@@ -1,16 +1,19 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import './RecipeCard.sass';
 import { } from '../../assets/kasia-serbin.jpg';
-import { RecipeContext } from '../../App';
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
+import RecipeForm from "../RecipeForm/RecipeForm";
+
+// import { RecipeContext } from '../../App';
 
 function RecipeCard(props) {
 
-    function click(e) {
-        e.preventDefault();
-        console.log(props.name)
-    };
+    const [open, setOpen] = useState(false);
+    const onOpenModal = () => setOpen(true);
+    const onCloseModal = () => setOpen(false);
 
-    const recipes = useContext(RecipeContext);
+    // const recipes = useContext(RecipeContext);
 
     return (
         <div className="RecipeCard">
@@ -20,7 +23,10 @@ function RecipeCard(props) {
             <ul className="ingredientList">
                 {props.ingredients.map((ingredient) => (<li>{ingredient}</li>))}
             </ul>
-            <button onClick={click}>Click-me</button>
+            <button onClick={onOpenModal}>Modifier</button>
+            <Modal open={open} onClose={onCloseModal}>
+                <RecipeForm name={props.name} image={props.image} ingredients={props.ingredients} />
+            </Modal>
         </div>
     );
 }
