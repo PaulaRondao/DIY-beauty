@@ -1,3 +1,4 @@
+// import { useState } from 'react';
 import * as React from 'react';
 import { } from '../../assets/kasia-serbin.jpg';
 import './RecipeForm.sass';
@@ -6,9 +7,9 @@ import TextField from '@mui/material/TextField';
 
 export default function RecipeForm(props) {
 
-    function close() {
-        console.log("Fermer")
-    }
+
+    // console.log("Fermer")
+
 
     return (
         <>
@@ -16,11 +17,10 @@ export default function RecipeForm(props) {
                 <h1>{props.name}</h1>
                 <img src={props.image} alt="" className="imgCard" />
                 <div className="ingredientList">
-                    {props.ingredients.map((ingredient) => { return (<TextField id={ingredient} label="Outlined" variant="outlined" value={ingredient} />); })}
+                    {props.ingredients.map((ingredient) => { return (<TextField style={{ marginTop: "10px" }} id={ingredient} key={ingredient} label="Outlined" variant="outlined" value={ingredient} />); })}
                 </div>
-                {/* <TextField id="standard-basic" label="Standard" variant="standard" /> */}
                 <div className='sectionButton'>
-                    <button className='buttonCancel' onClick={close}>Annuler</button>
+                    <button className='buttonCancel' onClick={() => props.closeModal(false)} >Annuler</button>
                     <button className='buttonValidate'>Valider</button>
                 </div>
             </div>

@@ -25,7 +25,7 @@ function RecipeCard(props) {
             </ul>
             <button onClick={onOpenModal}>Modifier</button>
             <Modal open={open} onClose={onCloseModal}>
-                <RecipeForm name={props.name} image={props.image} ingredients={props.ingredients} />
+                <RecipeForm name={props.name} image={props.image} ingredients={props.ingredients} closeModal={setOpen} />
             </Modal>
         </div>
     );
