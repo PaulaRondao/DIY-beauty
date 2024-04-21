@@ -23,7 +23,10 @@ function RecipeCard(props) {
             <ul className="ingredientList">
                 {props.ingredients.map((ingredient) => (<li>{ingredient}</li>))}
             </ul>
-            <button onClick={onOpenModal}>Modifier</button>
+            <div className="divButton">
+                <button className='buttonChange' onClick={onOpenModal}>Modifier</button>
+                <button className='buttonDelete'>Supprimer</button>
+            </div>
             <Modal open={open} onClose={onCloseModal}>
                 <RecipeForm name={props.name} image={props.image} ingredients={props.ingredients} closeModal={setOpen} />
             </Modal>
